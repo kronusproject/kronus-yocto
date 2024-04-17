@@ -1,0 +1,5 @@
+header:
+  version: 14
+  includes:
+    - scripts/kas/include/kronus-common.yml
+target: kronus-dev-image

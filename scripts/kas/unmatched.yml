@@ -1,0 +1,11 @@
+header:
+  version: 14
+  includes:
+    - scripts/kas/include/kronus-common.yml
+distro: kronus
+machine: unmatched
+target: kronus-dev-image
+repos:
+  meta-sifive:
+    url: https://github.com/sifive/meta-sifive.git
+    commit: b2678e67b079b4fb233bed4eb9b70a46b5bb06a7

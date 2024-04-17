@@ -1,0 +1,25 @@
+header:
+  version: 14
+distro: kronus
+machine: qemuriscv64
+target: core-image-minimal
+repos:
+  kronus:
+    layers:
+      meta-kronus:
+  bitbake:
+    url: https://git.openembedded.org/bitbake
+    commit: c86466d51e8ff14e57a734c1eec5bb651fdc73ef
+    layers:
+      .: excluded
+  openembedded-core:
+    url: https://git.openembedded.org/openembedded-core
+    commit: b65b4e5a8e4473d8ca43835ba17bc8bd4bdca277
+    layers:
+      meta:
+
+local_conf_header:
+  kronus-common: |
+    USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
+    INHERIT:append = " rm_work"
+    RM_OLD_IMAGE = "1"
