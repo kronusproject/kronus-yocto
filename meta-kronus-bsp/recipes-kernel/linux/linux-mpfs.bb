@@ -27,6 +27,8 @@ SRC_URI:append:mpfs-beaglev-fire = " \
     file://0005-Microchip-QSPI-Add-regular-transfers.patch \
     file://0007-MMC-SPI-Hack-to-support-non-DMA-capable-SPI-ctrl.patch \
     file://mpfs_cmdline.cfg \
+    file://mpfs-beaglev-fire.dts \
+    file://mpfs-beaglev-fire-fabric.dtsi \
     "
 
 LINUX_VERSION ?= "6.1"
@@ -36,3 +38,8 @@ KERNEL_VERSION_SANITY_SKIP = "1"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 COMPATIBLE_MACHINE = "mpfs-beaglev-fire"
+
+do_configure:append() {
+    cp ${WORKDIR}/mpfs-beaglev-fire.dts ${S}/arch/riscv/boot/dts/microchip/
+    cp ${WORKDIR}/mpfs-beaglev-fire-fabric.dtsi ${S}/arch/riscv/boot/dts/microchip/
+}

@@ -9,5 +9,5 @@ bootm ramdisk;
 bootm prep;
 fdt set /soc/ethernet@20110000 mac-address ${beaglevfire_mac_addr0};
 fdt set /soc/ethernet@20112000 mac-address ${beaglevfire_mac_addr1};
-run design_overlays;
+# run design_overlays;
 bootm go;
