@@ -13,6 +13,7 @@ IMAGE_FEATURES += "\
 IMAGE_INSTALL = "\
     packagegroup-core-boot \
     packagegroup-kronus-cmdline \
+    kernel-modules \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     "
 
