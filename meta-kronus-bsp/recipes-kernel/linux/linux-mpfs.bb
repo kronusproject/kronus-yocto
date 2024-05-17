@@ -27,6 +27,7 @@ SRC_URI:append:mpfs-beaglev-fire = " \
     file://0005-Microchip-QSPI-Add-regular-transfers.patch \
     file://0007-MMC-SPI-Hack-to-support-non-DMA-capable-SPI-ctrl.patch \
     file://mpfs_cmdline.cfg \
+    file://usb_gadget.cfg \
     file://mpfs-beaglev-fire.dts \
     file://mpfs-beaglev-fire-fabric.dtsi \
     "
