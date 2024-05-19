@@ -19,6 +19,10 @@ SRC_URI:append:mpfs-beaglev-fire = "file://${UBOOT_ENV}.cmd \
                                     file://${MACHINE}.cfg \
                                     file://uEnv.txt \
                                    "
+SRC_URI:append:mpfs-disco-kit = "file://${UBOOT_ENV}.cmd \
+                                 file://${MACHINE}.cfg \
+                                 file://uEnv.txt \
+                                "
 
 ENV_SOURCE ?= "uEnv"
 ENV_FILENAME ?= "uboot.env"
@@ -37,4 +41,4 @@ do_deploy:append() {
     hss-payload-generator -c ${WORKDIR}/${HSS_PAYLOAD}.yaml -v ${DEPLOYDIR}/payload.bin
 }
 
-COMPATIBLE_MACHINE = "mpfs-beaglev-fire"
+COMPATIBLE_MACHINE = "(mpfs-beaglev-fire|mpfs-disco-kit)"
