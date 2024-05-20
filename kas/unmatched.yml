@@ -1,7 +1,7 @@
 header:
   version: 14
   includes:
-    - scripts/kas/include/kronus-common.yml
+    - kas/include/kronus-common.yml
 distro: kronus
 machine: unmatched
 target: kronus-dev-image

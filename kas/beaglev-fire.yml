@@ -1,9 +1,9 @@
 header:
   version: 14
   includes:
-    - scripts/kas/include/kronus-common.yml
+    - kas/include/kronus-common.yml
 distro: kronus
-machine: mpfs-disco-kit
+machine: mpfs-beaglev-fire
 target: kronus-dev-image
 repos:
   kronus:
