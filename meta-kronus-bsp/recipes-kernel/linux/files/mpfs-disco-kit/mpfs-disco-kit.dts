@@ -143,6 +143,10 @@
 	status = "okay";
 };
 
+&apbtest {
+	status = "okay";
+};
+
 &mac0 {
 	dma-noncoherent;
 	status = "okay";
