@@ -143,7 +143,7 @@
 	status = "okay";
 };
 
-&apbtest {
+&apb_test {
 	status = "okay";
 };
 

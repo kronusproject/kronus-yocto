@@ -30,10 +30,10 @@
 			status = "disabled";
 		};
 
-		apbtest: uio@40000500 {
+		apb_test: uio@40000000 {
 			compatible = "generic-uio";
 			linux,uio-name = "apb_test";
-			reg = <0x0 0x40000500 0x0 0x100>;
+			reg = <0x0 0x40000000 0x0 0x1000>;
 			status = "disabled";
 		};
 	};
