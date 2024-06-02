@@ -22,13 +22,6 @@
 			#dma-cells = <1>;
 			status = "disabled";
 		};
-
-		fpgalsram: uio@60000000 {
-			compatible = "generic-uio";
-			linux,uio-name = "fpga_lsram";
-			reg = <0x0 0x60000000 0x0 0x1000>;
-			status = "disabled";
-		};
 	};
 
 	mpfs_dma_proxy: mpfs-dma-proxy {

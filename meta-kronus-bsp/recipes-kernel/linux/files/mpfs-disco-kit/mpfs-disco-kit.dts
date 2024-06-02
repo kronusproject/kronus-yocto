@@ -139,10 +139,6 @@
 	status = "okay";
 };
 
-&fpgalsram {
-	status = "okay";
-};
-
 &mac0 {
 	dma-noncoherent;
 	status = "okay";
