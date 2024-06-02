@@ -14,6 +14,7 @@ IMAGE_INSTALL = "\
     packagegroup-core-boot \
     packagegroup-kronus-cmdline \
     kernel-modules \
+    dtc \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     "
 
