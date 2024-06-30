@@ -1,6 +1,13 @@
 Kronus Yocto
 ============
 
+## Setup
+
+```shell
+sudo cp *.rules /etc/udev/rules.d/
+sudo udevadm control --reload
+```
+
 ## Build
 
 ```shell
