@@ -17,6 +17,11 @@ repos:
     commit: 294a7dbe44f6b7c8d3a1de8c2cc182af37c4f916 # 2024-04.1,yocto-5.0.1,2024-04.1-scarthgap
     layers:
       meta:
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    commit: 78a14731cf0cf38a19ff8bd0e9255b319afaf3a7
+    layers:
+      meta-oe:
 
 local_conf_header:
   kronus-common: |
