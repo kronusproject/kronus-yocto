@@ -22,6 +22,9 @@ repos:
     commit: 78a14731cf0cf38a19ff8bd0e9255b319afaf3a7
     layers:
       meta-oe:
+  meta-clang:
+    url: https://github.com/kraj/meta-clang.git
+    commit: e7dceb1c92caf7f21ef1d7b49c85328c30cffd90
 
 local_conf_header:
   kronus-common: |
