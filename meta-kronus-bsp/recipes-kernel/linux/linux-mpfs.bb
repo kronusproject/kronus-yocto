@@ -14,8 +14,8 @@ KERNEL_FEATURES:remove = "features/kernel-sample/kernel-sample.scc"
 
 require recipes-kernel/linux/linux-yocto.inc
 
-# linux-6.6-mchp+fpga branch / linux4microchip+fpga-2024.06-rc2
-SRCREV = "76cedb1f5bb9fa65a16e33318a90fc7c1c596d03"
+# linux-6.6-mchp+fpga branch / linux4microchip+fpga-2024.06-rc4
+SRCREV = "70b2455831d17661444fbf0beeef5300f55117d3"
 SRC_URI = "git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1"
 
 SRC_URI:append:mpfs-beaglev-fire = " \
@@ -38,6 +38,7 @@ SRC_URI:append:mpfs-disco-kit = " \
 
 LINUX_VERSION ?= "6.6"
 LINUX_VERSION_EXTENSION = ""
+#LINUX_VERSION_EXTENSION = "-mpfs-${LINUX_KERNEL_TYPE}"
 KERNEL_VERSION_SANITY_SKIP = "1"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
