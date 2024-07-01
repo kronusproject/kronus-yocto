@@ -14,6 +14,7 @@ IMAGE_INSTALL = "\
     packagegroup-core-boot \
     packagegroup-kronus-cmdline \
     kernel-modules \
+    kronus-uio-mod \
     dtc \
     cmake \
     ninja \
