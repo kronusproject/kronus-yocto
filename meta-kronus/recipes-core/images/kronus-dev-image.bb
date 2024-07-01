@@ -15,6 +15,10 @@ IMAGE_INSTALL = "\
     packagegroup-kronus-cmdline \
     kernel-modules \
     dtc \
+    cmake \
+    ninja \
+    tmux \
+    clang \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     "
 
