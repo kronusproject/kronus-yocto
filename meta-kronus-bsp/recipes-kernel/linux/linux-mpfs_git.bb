@@ -9,16 +9,11 @@ KCONFIG_MODE = "--alldefconfig"
 KBUILD_DEFCONFIG ?= "mpfs_defconfig"
 
 KERNEL_EXTRA_FEATURES ?= ""
-KERNEL_FEATURES:remove = "features/debug/printk.scc"
-KERNEL_FEATURES:remove = "features/kernel-sample/kernel-sample.scc"
 
 require recipes-kernel/linux/linux-yocto.inc
 
-# linux-6.1-mchp+fpga branch
-SRCREV = "060758d16686da594dcef5d5ecf33c5328736857"
-SRC_URI = "git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1 \
-           file://0001-perf-cpumap-Make-counter-as-unsigned-ints.patch \
-          "
+SRCREV = "linux4microchip+fpga-2024.06"
+SRC_URI = "git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1"
 
 SRC_URI:append:mpfs-beaglev-fire = " \
     file://0002-PCIe-Change-controller-and-bridge-base-address.patch \
@@ -38,7 +33,7 @@ SRC_URI:append:mpfs-disco-kit = " \
     file://mpfs-disco-kit-fabric.dtsi \
     "
 
-LINUX_VERSION ?= "6.1"
+LINUX_VERSION ?= "6.6"
 LINUX_VERSION_EXTENSION = ""
 KERNEL_VERSION_SANITY_SKIP = "1"
 

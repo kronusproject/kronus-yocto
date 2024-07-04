@@ -76,7 +76,6 @@
 			compatible = "shared-dma-pool";
 			size = <0x0 0x4000000>;
 			no-map;
-			linux,dma-default;
 			alloc-ranges = <0x0 0xc4000000 0x0 0x4000000>;
 		};
 
@@ -145,8 +144,8 @@
 	phy-mode = "sgmii";
 	phy-handle = <&phy0>;
 
-	phy0: ethernet-phy@11 {
-		reg = <11>;
+	phy0: ethernet-phy@b {
+		reg = <0xb>;
 	};
 };
 
