@@ -32,3 +32,4 @@ local_conf_header:
     INHERIT:append = " rm_work"
     RM_OLD_IMAGE = "1"
     ERROR_QA:remove = "version-going-backwards"
+    HOSTTOOLS += "truncate"
