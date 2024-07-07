@@ -13,7 +13,10 @@ KERNEL_EXTRA_FEATURES ?= ""
 require recipes-kernel/linux/linux-yocto.inc
 
 SRCREV = "linux4microchip+fpga-2024.06"
-SRC_URI = "git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1"
+SRC_URI = " \
+    git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1 \
+    file://kronus.cfg \
+    "
 
 SRC_URI:append:mpfs-beaglev-fire = " \
     file://0002-PCIe-Change-controller-and-bridge-base-address.patch \
