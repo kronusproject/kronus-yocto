@@ -3,6 +3,9 @@
 
 /dts-v1/;
 
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/leds/common.h>
+
 #include "mpfs.dtsi"
 #include "mpfs-disco-kit-fabric.dtsi"
 
@@ -34,6 +37,16 @@
 
 	cpus {
 		timebase-frequency = <RTCCLK_FREQ>;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led8 {
+			gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
+			color = <LED_COLOR_ID_RED>;
+			default-state = "off";
+		};
 	};
 
 	kernel: memory@80000000 {
@@ -139,11 +152,4 @@
 			"", "", "", "", "", "", "", "", "", "",
 			"RPI_GPIO7", "", "", "";
 	status = "okay";
-
-	led8-hog {
-		gpio-hog;
-		gpios = <9 9>;
-		output-high;
-		line-name = "LED8";
-	};
 };
