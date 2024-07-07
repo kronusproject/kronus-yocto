@@ -133,3 +133,17 @@
 &syscontroller {
 	status = "okay";
 };
+
+&gpio1 {
+	gpio-line-names = "", "", "", "", "", "", "", "", "", "LED8",
+			"", "", "", "", "", "", "", "", "", "",
+			"RPI_GPIO7", "", "", "";
+	status = "okay";
+
+	led8-hog {
+		gpio-hog;
+		gpios = <9 9>;
+		output-high;
+		line-name = "LED8";
+	};
+};
