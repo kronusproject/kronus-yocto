@@ -19,6 +19,8 @@ IMAGE_INSTALL = "\
     ninja \
     tmux \
     clang \
+    htop \
+    libgpiod-tools \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     "
 
