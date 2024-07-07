@@ -33,3 +33,4 @@ local_conf_header:
     RM_OLD_IMAGE = "1"
     ERROR_QA:remove = "version-going-backwards"
     HOSTTOOLS += "truncate"
+    GLIBC_GENERATE_LOCALES = "en_US.UTF-8"
