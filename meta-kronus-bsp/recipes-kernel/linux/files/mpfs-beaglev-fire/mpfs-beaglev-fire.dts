@@ -95,70 +95,67 @@
 };
 
 &gpio0 {
-	ngpios=<14>;
 	gpio-line-names = "", "", "", "", "", "", "",
-			  "", "", "", "", "", "SD_CARD_CS", "USER_BUTTON";
+			"", "", "", "", "", "SD_CARD_CS", "USER_BUTTON";
 	status = "okay";
 
 	sd-card-cs-hog {
 		gpio-hog;
-		gpios = <12 12>;
+		gpios = <12 0>;
 		output-high;
 		line-name = "SD_CARD_CS";
 	};
 
 	user-button-hog {
 		gpio-hog;
-		gpios = <13 13>;
+		gpios = <13 0>;
 		input;
 		line-name = "USER_BUTTON";
 	};
 };
 
 &gpio1 {
-	ngpios=<24>;
 	gpio-line-names = "", "", "", "", "", "", "", "", "", "",
-			  "", "", "", "", "", "", "", "", "", "",
-			  "ADC_IRQn", "", "", "USB_OCn";
+			"", "", "", "", "", "", "", "", "", "",
+			"ADC_IRQn", "", "", "USB_OCn";
 	status = "okay";
 
 	adc-irqn-hog {
 		gpio-hog;
-		gpios = <20 20>;
+		gpios = <20 0>;
 		input;
 		line-name = "ADC_IRQn";
 	};
 
 	usb-ocn-hog {
 		gpio-hog;
-		gpios = <23 23>;
+		gpios = <23 0>;
 		input;
 		line-name = "USB_OCn";
 	};
 };
 
 &gpio2 {
-	ngpios=<32>;
 	gpio-line-names = "P8_PIN3_USER_LED_0", "P8_PIN4_USER_LED_1", "P8_PIN5_USER_LED_2",
-			  "P8_PIN6_USER_LED_3", "P8_PIN7_USER_LED_4", "P8_PIN8_USER_LED_5",
-			  "P8_PIN9_USER_LED_6", "P8_PIN10_USER_LED_7", "P8_PIN11_USER_LED_8",
-			  "P8_PIN12_USER_LED_9", "P8_PIN13_USER_LED_10", "P8_PIN14_USER_LED_11",
-			  "P8_PIN15", "P8_PIN16", "P8_PIN17", "P8_PIN18", "P8_PIN19", "P8_PIN20",
-			  "P8_PIN21", "P8_PIN22", "P8_PIN23", "P8_PIN24", "P8_PIN25", "P8_PIN26",
-			  "P8_PIN27", "P8_PIN28", "P8_PIN29", "P8_PIN30", "M2_W_DISABLE1",
-			  "M2_W_DISABLE2", "VIO_ENABLE", "SD_DET";
+			"P8_PIN6_USER_LED_3", "P8_PIN7_USER_LED_4", "P8_PIN8_USER_LED_5",
+			"P8_PIN9_USER_LED_6", "P8_PIN10_USER_LED_7", "P8_PIN11_USER_LED_8",
+			"P8_PIN12_USER_LED_9", "P8_PIN13_USER_LED_10", "P8_PIN14_USER_LED_11",
+			"P8_PIN15", "P8_PIN16", "P8_PIN17", "P8_PIN18", "P8_PIN19", "P8_PIN20",
+			"P8_PIN21", "P8_PIN22", "P8_PIN23", "P8_PIN24", "P8_PIN25", "P8_PIN26",
+			"P8_PIN27", "P8_PIN28", "P8_PIN29", "P8_PIN30", "M2_W_DISABLE1",
+			"M2_W_DISABLE2", "VIO_ENABLE", "SD_DET";
 	status = "okay";
 
 	vio-enable-hog {
 		gpio-hog;
-		gpios = <30 30>;
+		gpios = <30 0>;
 		output-high;
 		line-name = "VIO_ENABLE";
 	};
 
 	sd-det-hog {
 		gpio-hog;
-		gpios = <31 31>;
+		gpios = <31 0>;
 		input;
 		line-name = "SD_DET";
 	};
@@ -182,6 +179,7 @@
 	status = "okay";
 	phy-mode = "sgmii";
 	phy-handle = <&phy0>;
+
 	phy0: ethernet-phy@0 {
 		reg = <0>;
 	};
