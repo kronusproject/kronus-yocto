@@ -6,6 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
+PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
@@ -21,8 +22,7 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-export PS1='\[\e[32m\]\u@\h \[\e[36m\]\W \[\e[36m\]\$\[\e[0m\] '
-umask 022
+export PS1='$([[ $UID == "0" ]] && echo "\[\e[31m\]\h \[\e[33m\]\W \$\[\e[0m\]" || echo "\[\e[32m\]\h \[\e[36m\]\W \$\[\e[0m\]") '
 
 # Colorize `ls` command
 export LS_OPTIONS='--color=auto'
