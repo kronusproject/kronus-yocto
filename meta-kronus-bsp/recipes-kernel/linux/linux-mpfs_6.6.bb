@@ -36,7 +36,7 @@ SRC_URI:append:mpfs-disco-kit = " \
     file://mpfs-disco-kit-fabric.dtsi \
     "
 
-LINUX_VERSION ?= "6.6"
+LINUX_VERSION ?= "6.6.35"
 LINUX_VERSION_EXTENSION = ""
 KERNEL_VERSION_SANITY_SKIP = "1"
 
