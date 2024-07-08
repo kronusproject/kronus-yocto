@@ -12,8 +12,8 @@ IMAGE_FEATURES += "\
 
 IMAGE_INSTALL = "\
     packagegroup-core-boot \
+    packagegroup-machine-base \
     packagegroup-kronus-cmdline \
-    kernel-modules \
     dtc \
     cmake \
     ninja \
