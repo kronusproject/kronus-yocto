@@ -27,7 +27,7 @@
 
 set -e
 
-KAS_IMAGE_VERSION_DEFAULT="4.4"
+KAS_IMAGE_VERSION_DEFAULT="4.5"
 KAS_CONTAINER_IMAGE_PATH_DEFAULT="ghcr.io/siemens/kas"
 KAS_CONTAINER_IMAGE_NAME_DEFAULT="kas"
 KAS_CONTAINER_SELF_NAME="$(basename "$0")"
@@ -354,10 +354,21 @@ while [ $# -gt 0 ] && [ $KAS_EXTRA_BITBAKE_ARGS -eq 0 ]; do
 		shift 1
 		;;
 	*)
+		ARG="$1"
+		shift 1
+		if [ "$KAS_CMD" = "for-all-repos" ]; then
+			if [ $# -gt 0 ]; then
+				KAS_REPO_CMD="$1"
+				shift 1
+			else
+				KAS_REPO_CMD="$ARG"
+				unset ARG
+			fi
+		fi
 		KAS_FILES=
 		# SC2086: Double quote to prevent globbing and word splitting.
 		# shellcheck disable=2086
-		for FILE in $(IFS=':'; echo $1); do
+		for FILE in $(IFS=':'; echo $ARG); do
 			if ! KAS_REAL_FILE="$(realpath -qe "$FILE")"; then
 				fatal_error "configuration file '${FILE}' not found"
 			fi
@@ -368,11 +379,6 @@ while [ $# -gt 0 ] && [ $KAS_EXTRA_BITBAKE_ARGS -eq 0 ]; do
 				KAS_FILES="${KAS_FILES}:${KAS_REAL_FILE}"
 			fi
 		done
-		shift 1
-		if [ "$KAS_CMD" = "for-all-repos" ]; then
-			KAS_REPO_CMD="$1"
-			shift 1
-		fi
 		;;
 	esac
 done
@@ -510,6 +516,11 @@ fi
 if [ -f "${GITCONFIG_FILE}" ]; then
 	set -- "$@" -v "$(readlink -fv "${GITCONFIG_FILE}")":/var/kas/userdata/.gitconfig:ro \
 		-e GITCONFIG_FILE="/var/kas/userdata/.gitconfig"
+fi
+
+if [ -f "${REGISTRY_AUTH_FILE}" ]; then
+	set -- "$@" -v "$(readlink -fv "${REGISTRY_AUTH_FILE}")":/var/kas/userdata/.docker/config.json:ro \
+		-e REGISTRY_AUTH_FILE="/var/kas/userdata/.docker/config.json"
 fi
 
 if [ -t 1 ]; then
