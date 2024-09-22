@@ -1,0 +1,32 @@
+From b6d5ba1aa3db3f8769902abdb1e0c960e0ee8c71 Mon Sep 17 00:00:00 2001
+From: Brett Witherspoon <brett@witherspoon.engineering>
+Date: Sat, 21 Sep 2024 18:17:25 -0400
+Subject: [PATCH] net: Ignore missing attributes when exporting
+
+Commit 4ca4a76 added class, subclass, and protocol attributes for net
+fucntion. This are only found for the RDNIS function and this breaks
+exporting for the NCM and ECM funcitons.
+
+The import function already ignores missing attributes so ignore them
+on export also.
+---
+ src/function/ether.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/function/ether.c b/src/function/ether.c
+index a1d20f1..cc2fe3f 100644
+--- a/src/function/ether.c
++++ b/src/function/ether.c
+@@ -145,6 +145,12 @@ static int ether_libconfig_export(struct usbg_function *f,
+ 			continue;
+ 
+ 		ret = usbg_f_net_get_attr_val(nf, i, &val);
++		/* attr not found */
++		if (ret == USBG_ERROR_NOT_FOUND) {
++			ret = 0;
++			continue;
++		}
++		/* error */
+ 		if (ret)
+ 			break;
+ 
