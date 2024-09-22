@@ -13,4 +13,6 @@ S = "${WORKDIR}/git"
 
 RPROVIDES:${PN} += "kernel-module-kronus-uio"
 
+KERNEL_MODULE_AUTOLOAD += "kronus-uio"
+
 COMPATIBLE_MACHINE = "(mpfs-beaglev-fire|mpfs-disco-kit)"
