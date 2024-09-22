@@ -9,22 +9,22 @@ repos:
       meta-kronus:
   bitbake:
     url: https://git.openembedded.org/bitbake
-    commit: 8f90d10f9efc9a32e13f6bd031992aece79fe7cc # 2.8.1,yocto-5.0.1,2024-04.1-scarthgap
+    commit: 11d83170922a2c6b9db1f6e8c23e533526984b2c # 2.8.3,yocto-5.0.3,2024-04.3-scarthgap
     layers:
       .: excluded
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
-    commit: 294a7dbe44f6b7c8d3a1de8c2cc182af37c4f916 # 2024-04.1,yocto-5.0.1,2024-04.1-scarthgap
+    commit: 236ac1b43308df722a78d3aa20aef065dfae5b2b # 2024-04.3,yocto-5.0.3,2024-04.3-scarthgap
     layers:
       meta:
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    commit: 78a14731cf0cf38a19ff8bd0e9255b319afaf3a7
+    commit: 1235dd4ed4a57e67683c045ad76b6a0f9e896b45 # scarthgap
     layers:
       meta-oe:
   meta-clang:
     url: https://github.com/kraj/meta-clang.git
-    commit: e7dceb1c92caf7f21ef1d7b49c85328c30cffd90
+    commit: 2b7433611d80f6d0ee1b04156fa91fc73d3c2665 # scarthgap
 
 local_conf_header:
   kronus-common: |

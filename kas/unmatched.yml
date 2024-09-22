@@ -8,4 +8,4 @@ target: kronus-dev-image
 repos:
   meta-sifive:
     url: https://github.com/sifive/meta-sifive.git
-    commit: b2678e67b079b4fb233bed4eb9b70a46b5bb06a7
+    commit: 4b50b9c21248432427e2491462180e7d5df61ae8 # scarthgap
