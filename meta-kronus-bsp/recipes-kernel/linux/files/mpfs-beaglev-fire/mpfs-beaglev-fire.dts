@@ -173,6 +173,10 @@
 	};
 };
 
+&can1 {
+	status = "okay";
+};
+
 &mac0 {
 	dma-noncoherent;
 	status = "okay";
