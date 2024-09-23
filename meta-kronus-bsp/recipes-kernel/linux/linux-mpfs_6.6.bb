@@ -20,7 +20,6 @@ SRC_URI = " \
 
 SRC_URI:append:mpfs-beaglev-fire = " \
     file://0002-PCIe-Change-controller-and-bridge-base-address.patch \
-    file://0004-ADC-Add-Microchip-MCP356X-driver.patch \
     file://0005-Microchip-QSPI-Add-regular-transfers.patch \
     file://0007-MMC-SPI-Hack-to-support-non-DMA-capable-SPI-ctrl.patch \
     file://mpfs_cmdline.cfg \
