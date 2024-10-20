@@ -22,9 +22,6 @@ repos:
     commit: 1235dd4ed4a57e67683c045ad76b6a0f9e896b45 # scarthgap
     layers:
       meta-oe:
-  meta-clang:
-    url: https://github.com/kraj/meta-clang.git
-    commit: 2b7433611d80f6d0ee1b04156fa91fc73d3c2665 # scarthgap
 
 local_conf_header:
   kronus-common: |

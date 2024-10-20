@@ -18,7 +18,6 @@ IMAGE_INSTALL = "\
     cmake \
     ninja \
     tmux \
-    clang \
     htop \
     libgpiod-tools \
     can-utils \
