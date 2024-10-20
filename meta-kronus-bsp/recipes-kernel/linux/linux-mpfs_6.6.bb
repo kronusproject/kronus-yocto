@@ -12,16 +12,13 @@ KERNEL_EXTRA_FEATURES ?= ""
 
 require recipes-kernel/linux/linux-yocto.inc
 
-SRCREV = "linux4microchip+fpga-2024.06"
+SRCREV = "linux4microchip+fpga-2024.09"
 SRC_URI = " \
     git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1 \
     file://kronus.cfg \
     "
 
 SRC_URI:append:mpfs-beaglev-fire = " \
-    file://0002-PCIe-Change-controller-and-bridge-base-address.patch \
-    file://0005-Microchip-QSPI-Add-regular-transfers.patch \
-    file://0007-MMC-SPI-Hack-to-support-non-DMA-capable-SPI-ctrl.patch \
     file://mpfs_cmdline.cfg \
     file://usb_gadget.cfg \
     file://mpfs-beaglev-fire.dts \
@@ -34,7 +31,7 @@ SRC_URI:append:mpfs-disco-kit = " \
     file://mpfs-disco-kit-fabric.dtsi \
     "
 
-LINUX_VERSION ?= "6.6.35"
+LINUX_VERSION ?= "6.6.51"
 LINUX_VERSION_EXTENSION = ""
 KERNEL_VERSION_SANITY_SKIP = "1"
 
