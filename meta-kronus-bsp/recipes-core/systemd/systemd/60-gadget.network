@@ -2,5 +2,6 @@
 Type=gadget
 
 [Network]
-Address=192.168.11.1/24
-DHCPServer=yes
+DHCP=true
+LinkLocalAddressing=true
+MulticastDNS=true
