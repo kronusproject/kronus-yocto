@@ -14,10 +14,12 @@ FILES:${PN} += "${sysconfdir}/repart.d/*"
 SRC_URI:append:mpfs-beaglev-fire = " \
     file://60-can.network \
     file://60-gadget.network \
+    file://65-gadget-dhcp-server.network \
     "
 
 do_install:append:mpfs-beaglev-fire() {
     install -D -m 0644 ${WORKDIR}/60-gadget.network ${D}${systemd_unitdir}/network/
+    install -D -m 0644 ${WORKDIR}/65-gadget-dhcp-server.network ${D}${systemd_unitdir}/network/
     install -D -m 0644 ${WORKDIR}/60-can.network ${D}${systemd_unitdir}/network/
 }
 
