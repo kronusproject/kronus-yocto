@@ -3,3 +3,7 @@ header:
   includes:
     - kas/include/kronus-common.yml
 target: kronus-dev-image
+repos:
+  kronus:
+    layers:
+      meta-kronus-bsp:
