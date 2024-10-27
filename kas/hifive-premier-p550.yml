@@ -1,0 +1,15 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus-common.yml
+distro: kronus
+machine: hifive-premier-p550
+target: kronus-dev-image
+repos:
+  meta-sifive:
+    url: https://github.com/sifive/meta-sifive.git
+    commit: 30e9b0a6a109821f4db50f837cd76d6bf007a76a # rel/meta-sifive/hifive-premier-p550
+
+local_conf_header:
+  hifive-premier-p550: |
+    IMAGE_FSTYPES:append = " wic.bmap"
