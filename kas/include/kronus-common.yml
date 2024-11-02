@@ -31,3 +31,4 @@ local_conf_header:
     ERROR_QA:remove = "version-going-backwards"
     HOSTTOOLS += "truncate"
     GLIBC_GENERATE_LOCALES = "en_US.UTF-8"
+    hostname:pn-base-files ?= "kronus"
