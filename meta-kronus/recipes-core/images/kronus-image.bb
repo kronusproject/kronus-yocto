@@ -4,6 +4,7 @@ IMAGE_FEATURES += "ssh-server-openssh"
 
 IMAGE_INSTALL = "\
     packagegroup-core-boot \
+    packagegroup-distro-base \
     packagegroup-machine-base \
     packagegroup-kronus-cmdline \
     tmux \
