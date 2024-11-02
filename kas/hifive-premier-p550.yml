@@ -8,8 +8,10 @@ target: kronus-dev-image
 repos:
   meta-sifive:
     url: https://github.com/sifive/meta-sifive.git
-    commit: 30e9b0a6a109821f4db50f837cd76d6bf007a76a # rel/meta-sifive/hifive-premier-p550
+    commit: de6128f46295588244236a4ffef0afe647902644 # dev/meta-sifive/hifive-premier-p550
 
 local_conf_header:
   hifive-premier-p550: |
     IMAGE_FSTYPES:append = " wic.bmap"
+    PACKAGECONFIG:append:pn-kmod = " zstd"
+    PACKAGECONFIG:append:pn-kmod-native = " zstd"
