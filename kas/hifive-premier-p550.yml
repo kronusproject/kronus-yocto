@@ -12,6 +12,7 @@ repos:
 
 local_conf_header:
   hifive-premier-p550: |
+    hostname:pn-base-files ?= "premier"
     IMAGE_FSTYPES:append = " wic.bmap"
     PACKAGECONFIG:append:pn-kmod = " zstd"
     PACKAGECONFIG:append:pn-kmod-native = " zstd"
