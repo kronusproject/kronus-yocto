@@ -10,9 +10,9 @@ IMAGE_INSTALL = "\
     tmux \
     htop \
     libgpiod-tools \
-    can-utils \
     mtd-utils \
     i2c-tools \
+    ${@bb.utils.contains('COMBINED_FEATURES', 'can', 'can-utils', '', d)} \
     ${@bb.utils.contains('COMBINED_FEATURES', 'usbhost', 'usbutils', '', d)} \
     ${@bb.utils.contains('COMBINED_FEATURES', 'pci', 'pciutils', '', d)} \
     ${CORE_IMAGE_EXTRA_INSTALL} \

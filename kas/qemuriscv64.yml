@@ -10,4 +10,4 @@ repos:
 
 local_conf_header:
   qemuriscv64: |
-    MACHINE_FEATURES:append = " pci"
+    MACHINE_FEATURES:append = " can pci"
