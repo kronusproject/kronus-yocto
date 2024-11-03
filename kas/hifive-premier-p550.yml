@@ -15,3 +15,5 @@ local_conf_header:
     IMAGE_FSTYPES:append = " wic.bmap"
     PACKAGECONFIG:append:pn-kmod = " zstd"
     PACKAGECONFIG:append:pn-kmod-native = " zstd"
+    SRCREV_machine:hifive-premier-p550:pn-linux-sifive-hf-premier-p550 = "4cd2a50c950669acda257ed0eb9f68eb259a2daa"
+    LINUX_VERSION:pn-linux-sifive-hf-premier-p550 = "6.6.59"
