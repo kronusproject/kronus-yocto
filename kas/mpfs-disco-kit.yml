@@ -8,4 +8,4 @@ target: kronus-dev-image
 repos:
   kronus:
     layers:
-      meta-kronus-bsp:
+      meta-kronus-mpfs-bsp:
