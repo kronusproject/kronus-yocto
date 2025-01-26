@@ -12,7 +12,7 @@ KERNEL_EXTRA_FEATURES ?= ""
 
 require recipes-kernel/linux/linux-yocto.inc
 
-SRCREV = "linux4microchip+fpga-2024.09"
+SRCREV = "linux4microchip+fpga-2024.09.1"
 SRC_URI = " \
     git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1 \
     file://kronus.cfg \
