@@ -4,7 +4,6 @@ header:
     - kas/include/kronus-common.yml
 distro: kronus
 machine: unmatched
-target: kronus-dev-image
 repos:
   meta-sifive:
     url: https://github.com/sifive/meta-sifive.git

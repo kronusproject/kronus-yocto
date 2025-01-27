@@ -2,7 +2,7 @@ header:
   version: 14
 distro: kronus
 machine: qemuriscv64
-target: core-image-minimal
+target: kronus-image
 repos:
   kronus:
     layers:

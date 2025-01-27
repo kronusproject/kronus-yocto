@@ -2,7 +2,6 @@ header:
   version: 14
   includes:
     - kas/include/kronus-common.yml
-target: kronus-dev-image
 
 local_conf_header:
   qemuriscv64: |

@@ -4,7 +4,6 @@ header:
     - kas/include/kronus-common.yml
 distro: kronus
 machine: mpfs-disco-kit
-target: kronus-dev-image
 repos:
   kronus:
     layers:
