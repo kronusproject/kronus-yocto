@@ -1,0 +1,11 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus-mpfs.yml
+target: kronus-dev-image
+task: populate_sdk
+
+local_conf_header:
+  kronus-mpfs-sdk: |
+    HOSTTOOLS += "qemu-x86_64"
+    TOOLCHAIN_HOST_TASK:append = " nativesdk-openocd-mchp"
