@@ -1,10 +1,5 @@
 header:
   version: 14
   includes:
-    - kas/include/kronus-common.yml
-distro: kronus
+    - kas/include/kronus-mpfs.yml
 machine: mpfs-beaglev-fire
-repos:
-  kronus:
-    layers:
-      meta-kronus-mpfs-bsp:

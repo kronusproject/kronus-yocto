@@ -1,0 +1,9 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus.yml
+machine: mpfs-disco-kit
+repos:
+  kronus:
+    layers:
+      meta-kronus-mpfs-bsp:
