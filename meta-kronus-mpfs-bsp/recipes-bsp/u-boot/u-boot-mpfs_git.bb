@@ -10,7 +10,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=2ca5f2c35c8cc335f0a19756634782f1"
 
 PV = "2023.07-mchp+git${SRCPV}"
-SRCREV = "linux4microchip+fpga-2024.09"
+SRCREV = "linux4microchip+fpga-2025.03-rc1"
 SRC_URI = "git://github.com/linux4microchip/u-boot-mchp.git;protocol=https;nobranch=1 \
            file://${HSS_PAYLOAD}.yaml \
            "
