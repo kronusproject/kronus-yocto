@@ -12,7 +12,7 @@ KERNEL_EXTRA_FEATURES ?= ""
 
 require recipes-kernel/linux/linux-yocto.inc
 
-SRCREV = "linux4microchip+fpga-2024.09.1"
+SRCREV = "linux4microchip+fpga-2025.03-rc1"
 SRC_URI = " \
     git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1 \
     file://kronus.cfg \
@@ -31,7 +31,7 @@ SRC_URI:append:mpfs-disco-kit = " \
     file://mpfs-disco-kit-fabric.dtsi \
     "
 
-LINUX_VERSION ?= "6.6.51"
+LINUX_VERSION ?= "6.6.75"
 LINUX_VERSION_EXTENSION = ""
 KERNEL_VERSION_SANITY_SKIP = "1"
 
