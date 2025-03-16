@@ -1,0 +1,21 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus-sifive.yml
+distro: kronus
+machine: hifive-premier-p550
+target: kronus-dev-image
+repos:
+  meta-sifive:
+    url: https://github.com/sifive/meta-sifive.git
+    commit: 39b51f41db37ff8c83cf599f569c7d6fef27566b # rel/meta-sifive/kernel_upgrade
+
+local_conf_header:
+  hifive-premier-p550: |
+    hostname:pn-base-files ?= "premier"
+    IMAGE_INSTALL:append:hifive-premier-p550 = " bmaptool es-bmcd lmsensors lmsensors-config-fancontrol"
+    IMAGE_FSTYPES:append = " wic.bmap"
+    PACKAGECONFIG:append:pn-kmod = " zstd"
+    PACKAGECONFIG:append:pn-kmod-native = " zstd"
+    SRCREV_machine:hifive-premier-p550:pn-linux-sifive-hf-premier-p550 = "ae8ad2df02e21eae952375e9063b57c3aeab936b"
+    LINUX_VERSION:pn-linux-sifive-hf-premier-p550 = "6.6.77"
