@@ -1,0 +1,8 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus.yml
+repos:
+  kronus:
+    layers:
+      meta-kronus-sifive-bsp:
