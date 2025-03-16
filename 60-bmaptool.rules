@@ -3,12 +3,16 @@
 SUBSYSTEM!="block", GOTO="bmaptool_optimizations_end"
 ACTION!="add|change", GOTO="bmaptool_optimizations_end"
 
+# PolarFireSoC HSS USBDMSC
+ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1514", ATTRS{idProduct}=="0001", TAG+="uaccess"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1514", ATTRS{idProduct}=="0001", ATTR{bdi/min_ratio}="0", ATTR{bdi/max_ratio}="1", ATTR{queue/scheduler}="none"
+
 # Realtek USB 3.0 Card Reader (Anker USB 3.0 SD/microSD Card Reader)
 ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="0306", TAG+="uaccess"
 SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="0306", ATTR{bdi/min_ratio}="0", ATTR{bdi/max_ratio}="1", ATTR{queue/scheduler}="none"
 
-# PolarFireSoC HSS USBDMSC
-ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1514", ATTRS{idProduct}=="0001", TAG+="uaccess"
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="1514", ATTRS{idProduct}=="0001", ATTR{bdi/min_ratio}="0", ATTR{bdi/max_ratio}="1", ATTR{queue/scheduler}="none"
+# Samsung Flash Drive FIT
+ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="090c", ATTRS{idProduct}=="1000", TAG+="uaccess"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="090c", ATTRS{idProduct}=="1000", ATTR{bdi/min_ratio}="0", ATTR{bdi/max_ratio}="1", ATTR{queue/scheduler}="none"
 
 LABEL="bmaptool_optimizations_end"
