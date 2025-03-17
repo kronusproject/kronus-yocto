@@ -1,0 +1,8 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus-mpfs.yml
+
+local_conf_header:
+  kronus-mpfs-rt: |
+    PREFERRED_PROVIDER_virtual/kernel ?= "linux-mpfs-rt"
