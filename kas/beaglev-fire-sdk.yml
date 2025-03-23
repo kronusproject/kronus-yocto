@@ -1,0 +1,5 @@
+header:
+  version: 14
+  includes:
+    - kas/include/kronus-mpfs-sdk.yml
+machine: mpfs-beaglev-fire
