@@ -11,7 +11,7 @@ repos:
     url: https://git.openembedded.org/bitbake
     commit: 982645110a19ebb94d519926a4e14c8a2a205cfd # 2.8.12,yocto-5.0.12,2024-04.12-scarthgap
     layers:
-      .: excluded
+      .: disabled
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
     commit: 93c7489d843a0e46fe4fc685b356d0ae885300d7  # 2024-04.12,yocto-5.0.12,2024-04.12-scarthgap
