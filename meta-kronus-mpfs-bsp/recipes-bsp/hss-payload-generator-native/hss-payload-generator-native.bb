@@ -9,12 +9,10 @@ inherit native
 
 DEPENDS = "elfutils-native libyaml-native zlib-native openssl-native"
 
-PV = "1.0+git${SRCPV}"
+PV = "1.0+git"
 # v2026.04.1
 SRCREV = "711a983527cef51b8d1dbb92f91d1674a02f2270"
 SRC_URI = "git://github.com/polarfire-soc/hart-software-services.git;protocol=https;nobranch=1"
-
-S = "${WORKDIR}/git"
 
 do_configure[noexec] = "1"
 
@@ -27,5 +25,5 @@ do_install() {
     install -m 755 ${S}/tools/hss-payload-generator/hss-payload-generator ${D}${bindir}
 }
 
-FILES_${PN} = "${bindir}/hss-payload-generator"
+FILES:${PN} = "${bindir}/hss-payload-generator"
 

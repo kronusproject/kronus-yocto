@@ -7,4 +7,4 @@ machine: unmatched
 repos:
   meta-sifive:
     url: https://github.com/sifive/meta-sifive.git
-    commit: 4b50b9c21248432427e2491462180e7d5df61ae8 # scarthgap
+    commit: c7f87a7068ab5fe6961c8821ab3a52b9eea0d185 # wrynose

@@ -7,9 +7,7 @@ inherit module
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/kronusproject/kronus-uio.git;protocol=https;branch=main"
 
-PV = "0.1.0+git${SRCPV}"
-
-S = "${WORKDIR}/git"
+PV = "0.1.0+git"
 
 RPROVIDES:${PN} += "kernel-module-kronus-uio"
 

@@ -7,8 +7,8 @@ RDEPENDS:${PN} = "libusb1"
 SRC_URI = " \
     git://github.com/microchip-fpga/openocd.git;protocol=https;name=openocd;branch=microchip-pic64gx-curiosity \
     git://repo.or.cz/r/git2cl.git;protocol=http;destsuffix=tools/git2cl;name=git2cl;branch=master \
-    git://github.com/msteveb/jimtcl.git;protocol=https;destsuffix=git/jimtcl;name=jimtcl;branch=master \
-    git://repo.or.cz/r/libjaylink.git;protocol=http;destsuffix=git/src/jtag/drivers/libjaylink;name=libjaylink;branch=master \
+    git://github.com/msteveb/jimtcl.git;protocol=https;destsuffix=${BP}/jimtcl;name=jimtcl;branch=master \
+    git://repo.or.cz/r/libjaylink.git;protocol=http;destsuffix=${BP}/src/jtag/drivers/libjaylink;name=libjaylink;branch=master \
 "
 
 SRCREV_FORMAT = "openocd"
@@ -18,7 +18,6 @@ SRCREV_jimtcl = "1933e5457b9512d39ebbe11ed32578aada149f49"
 SRCREV_libjaylink = "0d23921a05d5d427332a142d154c213d0c306eb1"
 
 PV = "0.12+git"
-S = "${WORKDIR}/git"
 
 inherit pkgconfig autotools-brokensep gettext
 

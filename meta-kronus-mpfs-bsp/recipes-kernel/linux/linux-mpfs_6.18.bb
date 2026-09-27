@@ -40,11 +40,11 @@ LINUX_VERSION ?= "6.18.35"
 LINUX_VERSION_EXTENSION = ""
 KERNEL_VERSION_SANITY_SKIP = "1"
 
-PV = "${LINUX_VERSION}+git${SRCPV}"
+PV = "${LINUX_VERSION}+git"
 
 COMPATIBLE_MACHINE = "(mpfs-beaglev-fire|mpfs-disco-kit)"
 
 do_configure:append() {
-    cp ${WORKDIR}/${MACHINE}.dts ${S}/arch/riscv/boot/dts/microchip/
-    cp ${WORKDIR}/${MACHINE}-fabric.dtsi ${S}/arch/riscv/boot/dts/microchip/
+    cp ${UNPACKDIR}/${MACHINE}.dts ${S}/arch/riscv/boot/dts/microchip/
+    cp ${UNPACKDIR}/${MACHINE}-fabric.dtsi ${S}/arch/riscv/boot/dts/microchip/
 }

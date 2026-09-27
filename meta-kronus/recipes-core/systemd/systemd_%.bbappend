@@ -11,15 +11,15 @@ PACKAGECONFIG:append = "openssl repart"
 
 do_install:append() {
     install -d ${D}${sysconfdir}/repart.d/
-    install -m 0644 ${WORKDIR}/50-root.conf ${D}${sysconfdir}/repart.d/
+    install -m 0644 ${UNPACKDIR}/50-root.conf ${D}${sysconfdir}/repart.d/
 
     if ${@bb.utils.contains('COMBINED_FEATURES', 'can', 'true', 'false', d)}; then
-        install -D -m 0644 ${WORKDIR}/60-can.network ${D}${systemd_unitdir}/network/
+        install -D -m 0644 ${UNPACKDIR}/60-can.network ${D}${systemd_unitdir}/network/
     fi
 
     if ${@bb.utils.contains('COMBINED_FEATURES', 'usbgadget', 'true', 'false', d)}; then
-        install -D -m 0644 ${WORKDIR}/60-gadget.network ${D}${systemd_unitdir}/network/
-        install -D -m 0644 ${WORKDIR}/65-gadget-dhcp-server.network ${D}${systemd_unitdir}/network/
+        install -D -m 0644 ${UNPACKDIR}/60-gadget.network ${D}${systemd_unitdir}/network/
+        install -D -m 0644 ${UNPACKDIR}/65-gadget-dhcp-server.network ${D}${systemd_unitdir}/network/
     fi
 }
 
