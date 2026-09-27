@@ -32,6 +32,12 @@ Where Kronus is today versus the newest upstream versions, taken from upstream g
 2. **Then Yocto 6.0 Wrynose (6.0.3 / bitbake 2.18.0).** This step is layer-only: bump `LAYERSERIES_COMPAT`, apply the 5.1 to 6.0 migration notes, move kas repos to `wrynose` and choose an init system. The kernel doesn't change, because Wrynose's own default is also 6.18.
 3. **kronus-system:** Libero 2025.2 and the xPack toolchain for HSS, alongside step 1.
 
+## Upstream alternatives (follow-up questions)
+
+- **Mainline Linux** (checked at 7.3-rc4) has device trees for `mpfs-beaglev-fire` and `mpfs-disco-kit` and drivers for almost all of the MSS. Only Microchip's tree has these: the MPFS CAN driver (the BeagleV-Fire dts enables `can1`), `mpfs-dma-proxy` (used by the Disco Kit fabric dtsi), the IHC mailbox, the watchdog, CoreUART, crypto, the GPIO IRQ mux, and `mpfs_defconfig`. Plan: use linux4microchip 6.18 for the Scarthgap step, then re-evaluate mainline plus a small patch set once the SSM fabric needs are known.
+- **Upstream U-Boot** (2026.07) has `beaglev_fire_defconfig`. The Disco Kit is covered by `microchip_mpfs_generic_defconfig` (it uses the DTB from HSS, and `mpfs-disco-kit.dts` is in `dts/upstream`), with `microchip/mpfs-disco-kit` added to `CONFIG_OF_LIST`. The Kronus env fragments, `boot.cmd` and payload YAML don't depend on the fork. Recommended over u-boot-mchp. MAC address and syscontroller dtbo handling need a check on hardware.
+- **meta-mchp as a dependency:** not for now. It is Scarthgap-only and would block Wrynose, and Kronus overrides its DTs, kernel config and RT anyway. Borrow its recipes, U-Boot envs and HSS payload files instead, and revisit if it gets a Wrynose branch.
+
 ## Open risks
 
 - `kronus-uio-mod` is on `AUTOREV`. It needs pinning, and its build needs checking against 6.18 kernel APIs.
