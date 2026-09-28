@@ -9,17 +9,17 @@ repos:
       meta-kronus:
   bitbake:
     url: https://git.openembedded.org/bitbake
-    commit: 982645110a19ebb94d519926a4e14c8a2a205cfd # 2.8.12,yocto-5.0.12,2024-04.12-scarthgap
+    commit: cff3be6f664f8f07a40727ff63eeeb24d6f5e00b # yocto-5.0.20
     layers:
       .: disabled
   openembedded-core:
     url: https://git.openembedded.org/openembedded-core
-    commit: 93c7489d843a0e46fe4fc685b356d0ae885300d7  # 2024-04.12,yocto-5.0.12,2024-04.12-scarthgap
+    commit: 70dc15941dd33270a92d1001174efb3093e79bdf # yocto-5.0.20
     layers:
       meta:
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    commit: e621da947048842109db1b4fd3917a02e0501aa2 # scarthgap
+    commit: b5874ea07d69919d9b40d59f2c2f0bbd24bc3259 # scarthgap
     layers:
       meta-oe:
 
