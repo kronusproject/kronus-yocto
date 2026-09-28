@@ -4,7 +4,8 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=12f884d2ae1ff87c09e5b7ccc2c4ca7e"
 
 inherit module
 
-SRCREV = "${AUTOREV}"
+# kronus-uio main as of 2024-10-05 ("feat: Update IRQ control")
+SRCREV = "427738ddbf0cd3c7cc64a57cccc94a24ce8a7015"
 SRC_URI = "git://github.com/kronusproject/kronus-uio.git;protocol=https;branch=main"
 
 PV = "0.1.0+git${SRCPV}"
