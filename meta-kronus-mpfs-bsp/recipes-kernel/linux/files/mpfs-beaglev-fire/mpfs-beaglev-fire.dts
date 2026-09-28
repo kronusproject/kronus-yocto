@@ -7,8 +7,8 @@
 #include "mpfs.dtsi"
 #include "mpfs-beaglev-fire-fabric.dtsi"
 
-/* Clock frequency (in Hz) of the rtcclk */
-#define RTCCLK_FREQ		1000000
+/* Clock frequency (in Hz) of MTIMER */
+#define MTIMER_FREQ		1000000
 
 / {
 	#address-cells = <2>;
@@ -37,7 +37,7 @@
 	};
 
 	cpus {
-		timebase-frequency = <RTCCLK_FREQ>;
+		timebase-frequency = <MTIMER_FREQ>;
 	};
 
 	kernel: memory@80000000 {
@@ -168,7 +168,7 @@
 	status = "okay";
 
 	eeprom: eeprom@50 {
-		compatible = "at,24c32";
+		compatible = "atmel,24c32";
 		reg = <0x50>;
 	};
 };
@@ -257,4 +257,8 @@
 	dma-noncoherent;
 	status = "okay";
 	dr_mode = "otg";
+};
+
+&wdt1 {
+	status = "okay";
 };

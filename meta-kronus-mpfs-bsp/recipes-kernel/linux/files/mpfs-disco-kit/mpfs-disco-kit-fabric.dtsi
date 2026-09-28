@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: (GPL-2.0 OR MIT)
 /* Copyright (c) 2020-2021 Microchip Technology Inc */
 
-#include "dt-bindings/mailbox/miv-ihc.h"
-
 / {
 	compatible = "microchip,mpfs-disco-kit", "microchip,mpfs";
 
@@ -18,10 +16,10 @@
 	};
 
 	ihc: mailbox {
-		compatible = "microchip,miv-ihc";
+		compatible = "microchip,sbi-ipc";
 		interrupt-parent = <&plic>;
-		interrupts = <IHC_HART1_INT>;
-		microchip,miv-ihc-remote-context-id = <IHC_CONTEXT_B>;
+		interrupts = <180>, <179>, <178>;
+		interrupt-names = "hart-1", "hart-2", "hart-3";
 		#mbox-cells = <1>;
 		status = "disabled";
 	};

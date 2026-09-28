@@ -12,11 +12,16 @@ KERNEL_EXTRA_FEATURES ?= ""
 
 require recipes-kernel/linux/linux-yocto.inc
 
-SRCREV = "linux4microchip+fpga-2025.03.1"
+# linux4microchip-2026.04.2 (linux-6.18-mchp)
+SRCREV = "31dca4a2b554a9ea57216bb1638bc54580615aad"
 SRC_URI = " \
     git://github.com/linux4microchip/linux.git;protocol=https;nobranch=1 \
     file://kronus.cfg \
     "
+
+# PREEMPT_RT is in mainline, so a real-time kernel only needs a config fragment
+LINUX_MPFS_PREEMPT_RT ??= "0"
+SRC_URI:append = "${@oe.utils.conditional('LINUX_MPFS_PREEMPT_RT', '1', ' file://preempt-rt.cfg', '', d)}"
 
 SRC_URI:append:mpfs-beaglev-fire = " \
     file://mpfs_cmdline.cfg \
@@ -31,7 +36,7 @@ SRC_URI:append:mpfs-disco-kit = " \
     file://mpfs-disco-kit-fabric.dtsi \
     "
 
-LINUX_VERSION ?= "6.6.75"
+LINUX_VERSION ?= "6.18.35"
 LINUX_VERSION_EXTENSION = ""
 KERNEL_VERSION_SANITY_SKIP = "1"
 
